@@ -6,7 +6,7 @@ using AndroidX.Biometric;
 
 namespace Plugin.Fingerprint
 {
-    public class AuthenticationHandler : BiometricPrompt.AuthenticationCallback, IDialogInterfaceOnClickListener
+    public class AuthenticationHandler : BiometricPrompt.AuthenticationCallback
     {
         private readonly TaskCompletionSource<FingerprintAuthenticationResult> _taskCompletionSource;
 
@@ -54,17 +54,5 @@ namespace Plugin.Fingerprint
         {
             base.OnAuthenticationFailed();
         }
-
-        public void OnClick(IDialogInterface dialog, int which)
-        {
-            var faResult = new FingerprintAuthenticationResult { Status = FingerprintAuthenticationResultStatus.Canceled };
-            SetResultSafe(faResult);
-        }
-
-        //public override void OnAuthenticationHelp(BiometricAcquiredStatus helpCode, ICharSequence helpString)
-        //{
-        //    base.OnAuthenticationHelp(helpCode, helpString);
-        //    _listener?.OnHelp(FingerprintAuthenticationHelp.MovedTooFast, helpString?.ToString());
-        //}
     }
 }
