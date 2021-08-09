@@ -47,6 +47,11 @@ namespace Plugin.Fingerprint
                 result.Status = FingerprintAuthenticationResultStatus.TooManyAttempts;
             }
 
+            if (errString.ToString().ToLowerInvariant().Contains("cancel"))
+            {
+                result.Status = FingerprintAuthenticationResultStatus.Canceled;
+            }
+
             SetResultSafe(result);
         }
 
