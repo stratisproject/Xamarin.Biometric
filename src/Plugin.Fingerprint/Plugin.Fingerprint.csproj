@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45;Xamarin.Mac20;Xamarin.iOS10;Xamarin.TVOS10;Xamarin.WatchOS10;MonoAndroid90;uap10.0.16299;Tizen40;</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;Xamarin.Mac20;Xamarin.iOS10;MonoAndroid90;</TargetFrameworks>
     <LangVersion>8</LangVersion>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
@@ -56,8 +56,4 @@
     <!--<TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>-->
     <DefineConstants>$(DefineConstants);WINDOWS_UWP;</DefineConstants>
   </PropertyGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('net4')) OR $(TargetFramework.StartsWith('Xamarin.TVOS')) OR $(TargetFramework.StartsWith('Xamarin.WatchOS')) OR $(TargetFramework.StartsWith('Tizen')) ">
-    <Compile Include="Platforms\NotImplemented\**\*.cs" />
-  </ItemGroup>
 </Project>
