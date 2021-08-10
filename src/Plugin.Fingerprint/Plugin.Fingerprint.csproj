@@ -5,7 +5,7 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
     <Title>Fingerprint / Face ID / Biometric Plugin for Xamarin</Title>
-    <AssemblyName>Plugin.Fingerprint</AssemblyName>
+    <AssemblyName>Plugin.Fingerprint.Extended</AssemblyName>
     <RootNamespace>Plugin.Fingerprint</RootNamespace>
   </PropertyGroup>
 
